@@ -33,7 +33,7 @@ function doAtractedByUser(refUser){
   
   Bot.sendMessageToChatWithId(refUser.chatId, 
     "You Have New Referral: @" + user.username +
-Libs.ResourcesLib.userRes("bank_deposit").add(2) + Libs.ResourcesLib.anotherUserRes("money", refUser.telegramid).add(2)
+Libs.ResourcesLib.userRes("money").add(2) + Libs.ResourcesLib.anotherUserRes("money", refUser.telegramid).add(2)
 ) }
 
 function doAlreadyAttracted(){

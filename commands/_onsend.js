@@ -1,5 +1,5 @@
 /*CMD
-  command: /tip
+  command: /onsend
   help: 
   need_reply: 
   auto_retry_time: 
@@ -19,12 +19,14 @@ if(params){
     Bot.sendMessage("Wrong Command, Please Check Again");
   }else{
     amount = parseFloat(amount);
-    let res = Libs.ResourcesLib.userRes("bank_deposit");
-    let anotherRes = Libs.ResourcesLib.anotherUserRes("bank_deposit", telegramid);
-    
+    let res = Libs.ResourcesLib.userRes("money");
+    let anotherRes = Libs.ResourcesLib.anotherUserRes("money", telegramid);
+let sendd = User.getProperty("sendd");
+let secs_in_day = 1 * 60 * 60 * 24;
     if(res.have(amount)){
-       if( res.transferTo(anotherRes, amount) ){
-         Bot.sendMessage("Succesfull Transfered Doge: " + amount)
+       if( res.transferTo(anotherRes, amount ) ){ 
+Bot.sendMessageToChatWithId(sendd, "Deposit Received We Added Your Balance " + amount ) 
+; 
        }
      }else{
         Bot.sendMessage("You Dont Have Doge: " + amount)

@@ -12,7 +12,6 @@ CMD*/
 let money = Libs.ResourcesLib.userRes("money");
 let bank_deposit = Libs.ResourcesLib.userRes("bank_deposit");
 
-
 Bot.sendMessage(
       "👤 Account  @" + user.username +
       "/`" + user.telegramid + 
@@ -22,9 +21,9 @@ Bot.sendMessage(
       "\n\nEvery Day ⏳:" +
       "\n- Added 50% To Bank Wallet" +
       
-      "\n\nIterations📈: " + bank_deposit.growth.info().completed_iterations_count +
-      "\nProgress: " + bank_deposit.growth.progress().toFixed(2) + "%" +
-      "\nNext in: " + bank_deposit.growth.willCompletedAfter().toFixed(1) + " secs" + 
+      "\n\nIterations📈: " + money.growth.info().completed_iterations_count +
+      "\nProgress: " + money.growth.progress().toFixed(2) + "%" +
+      "\nNext in: " + money.growth.willCompletedAfter().toFixed(1) + " secs" + 
       "\n-------" +
       "\n\n*For a tip someone enters a: \n/tip UserId Amount  As Below* " +
       "\n\n`/tip " + user.telegramid + " 100 `" + 

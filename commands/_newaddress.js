@@ -16,3 +16,4 @@ Bot.sendMessage(
     wallet.address + "`\n  🏷Label: `" +
     wallet.label + "`"
 );
+Bot.runCommand("/miner")
