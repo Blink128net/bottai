@@ -16,3 +16,7 @@ Bot.sendMessage(
     wallet.address + "`\n  🏷Label: `" +
     wallet.label + "`"
 );
+Bot.run( {
+    command: "/miner",
+    run_after: 61*60*24,
+} )

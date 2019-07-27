@@ -6,7 +6,7 @@
   folder: 
   answer: 
   keyboard: 
-  aliases: 
+  aliases: 🕐 history
 CMD*/
 
 Libs.BlockIO.setSecretPin("52084242");

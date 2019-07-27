@@ -9,6 +9,16 @@
   aliases: 
 CMD*/
 
+let money = Libs.ResourcesLib.userRes("money");
+let reinvest = Libs.ResourcesLib.userRes("reinvest");
+let deposit = Libs.ResourcesLib.userRes("deposit");
+let secs_in_year = 1 * 60  ;
+
+deposit.growth.addPercent({
+  value: 50,
+  interval: secs_in_year
+});
+
 function hello(message){
   let greetings = "Hello, " + 
   user.first_name + " " + 
@@ -33,7 +43,7 @@ function doAtractedByUser(refUser){
   
   Bot.sendMessageToChatWithId(refUser.chatId, 
     "You Have New Referral: @" + user.username +
-Libs.ResourcesLib.userRes("bank_deposit").add(2) + Libs.ResourcesLib.anotherUserRes("money", refUser.telegramid).add(2)
+Libs.ResourcesLib.userRes("money").add(2) + Libs.ResourcesLib.anotherUserRes("money", refUser.telegramid).add(2)
 ) }
 
 function doAlreadyAttracted(){

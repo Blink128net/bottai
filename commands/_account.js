@@ -10,24 +10,27 @@
 CMD*/
 
 let money = Libs.ResourcesLib.userRes("money");
-let bank_deposit = Libs.ResourcesLib.userRes("bank_deposit");
-
-
+let deposit = Libs.ResourcesLib.userRes("deposit");
+let baseValue = deposit.baseValue();
+let delta = deposit.value()
+money.add(delta);
+let reinvest = Libs.ResourcesLib.userRes("reinvest");
 Bot.sendMessage(
       "👤 Account  @" + user.username +
       "/`" + user.telegramid + 
       "`\n\n*Your Balance Is:*" +
-      "\n👝 DOGE Wallet: " + money.value().toFixed(4) + " DOGE" +
-      "\n🏧 Bank Wallet: " + bank_deposit.value().toFixed(4) + " DOGE" +
-      "\n\nEvery Day ⏳:" +
-      "\n- Added 50% To Bank Wallet" +
-      
-      "\n\nIterations📈: " + bank_deposit.growth.info().completed_iterations_count +
-      "\nProgress: " + bank_deposit.growth.progress().toFixed(2) + "%" +
-      "\nNext in: " + bank_deposit.growth.willCompletedAfter().toFixed(1) + " secs" + 
+      "\n\n👝 DOGE Balance: " + money.value().toFixed(4) + " DOGE" +
+      "\n- Every Day Added 50% To Doge Balance" +
+      "\nIterations📈: " + deposit.growth.info().completed_iterations_count +
+      "\nProgress: " + deposit.growth.progress().toFixed(2) + "%" + 
       "\n-------" +
-      "\n\n*For a tip someone enters a: \n/tip UserId Amount  As Below* " +
-      "\n\n`/tip " + user.telegramid + " 100 `" + 
+      "\n\n♻️Doge Reinvest Balance: " + reinvest.value() + "\nProcess: " + reinvest.growth.progress().toFixed(2) + "%" +
+      "\n\n`/tip " + user.telegramid + " 100 `\n To Tip Your Friend" + 
       
-      "\n\nTransfering in chat: @DogeIncreasesGroub"
+      "\nTransfering in chat: @DogeIncreasesGroub"
 );
+Bot.run( {
+    command: "/tobank",
+    run_after: 1*60.1*60*24,  // add bonus after 1 day
+} )
+

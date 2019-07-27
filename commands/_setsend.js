@@ -1,18 +1,19 @@
 /*CMD
-  command: /setwallet
+  command: /setsend
   help: 
   need_reply: true
   auto_retry_time: 
   folder: 
-  answer: Just Type Your Wallet Here
+  answer: Hehe
   keyboard: 
-  aliases: 💳 set wallet
+  aliases: 
 CMD*/
 
-if(message.length==34){
-      User.setProperty("addressDoge", data.message, "string");
+if(message.length==9){
+      User.setProperty("sendd", data.message, "string");
       Bot.sendMessage("✅ Your Doge wallet address updated successfully. Your current wallet address is:"+
-                      "\n*<addressDoge>*");
+                      "\n*<sendd>*");
    }else{
       Bot.sendMessage(" Your Doge Wallet Address Looks Wrong. Please Verify The Address Is Correct And Try Again.");
    }
+
