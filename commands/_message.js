@@ -10,7 +10,7 @@
 Send here any message you want to submit, you will receive the answer directly here in chat!
   ANSWER
   keyboard: 
-  aliases: 🗣 support 🗣
+  aliases: 🗣 support
 CMD*/
 
 var admin_chat = Bot.getProperty("admin_chat");

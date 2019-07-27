@@ -1,38 +1,27 @@
 /*CMD
   command: /withdraw
   help: 
-  need_reply: false
+  need_reply: true
   auto_retry_time: 
   folder: 
-  answer: 
+  answer: How Much You Want To Withdraw?
   keyboard: 
   aliases: 
 CMD*/
 
-if(params){
-  let arr = params.split(" ");
-  let address = User.getProperty("addressDoge");
-  let telegramid = arr[0];
-  let amount = arr[1];  
-
-  if(!arr[1]){
-    Bot.sendMessage("Wrong Command, Please Check Again");
-  }else{
-    amount = parseFloat(amount);
-    let res = Libs.ResourcesLib.userRes("money");
-    let anotherRes = Libs.ResourcesLib.anotherUserRes("money", telegramid);
-    
-    if(res.have(amount)){
-       if( res.transferTo(anotherRes, amount) ){
-         Bot.sendMessage("Succes Withdraw To Your Wallet : " + amount)
-       }
-Api.sendMessage({ chat_id : "@dogetrdpayment" , text : "Withdrawal Requests Sent ✅ \n\nExpect Payment Within 48 Hours Or Less\n\nReceipt Info 🧾\n\nPayment Address 📬 : "+address+"\nAmount Withdrawn 💸 : "+amount+" DOGE\nWithdrawn By 👤 : @"+user.username+"\nCurrency 💱 : DOGE"})
-
-Bot.sendMessageToChatWithId("758972534", "Withdrawal Requests Sent ✅ \n\nExpect Payment Within 48 Hours Or Less\n\nReceipt Info 🧾\n\nPayment Address 📬 : "+address+"\nAmount Withdrawn 💸 : "+amount+" DOGE\nWithdrawn By 👤 : @"+user.username+"\nCurrency 💱 : DOGE")
-     }else{
-        Bot.sendMessage("Your balance is not enough: " + amount)
-     }
-  }
+let chatid = chat.chatid
+let address = User.getProperty("addressDoge");
+let amount = parseFloat(data.message);
+let res = Libs.ResourcesLib.userRes("money");
+if (address==undefined){
+Bot.sendMessage("Error To Be Able to Withdraw Set You're Address ");
 }else{
-  Bot.sendMessage("No params. Need another user TelegramID and AMOUNT")
+if (amount<199 || amount>res.value()){
+Bot.sendMessage(" Error ‼‼ \nPlease Withdraw In The Minimum Withdrawal \nMinimum withdraw Is 200\n\nOr\n\nMake Sure You Have A Sufficient Balance");
+}else{
+res.remove(amount);
+Bot.sendInlineKeyboard([ {title: "Cek My Withdrawal", url: "http://t.me/dogeincreaseschannel"}], "Withdrawal Request Send ✅");
+Api.sendMessage({ chat_id : "@dogeincreaseschannel" , text : "Withdrawal Requests Sent ✅ \n\nExpect Payment Within 48 Hours Or Less\n\nReceipt Info 🧾\n\nPayment Address 📬 : "+address+"\nAmount Withdrawn 💸 : "+amount+" DOGE\nWithdrawn By 👤 : @"+user.username+"\nCurrency 💱 : DOGE"})
+Bot.sendMessageToChatWithId(609981281 , "Withdrawal Requests Received ✅ \n\nExpect Payment Within 48 Hours Or Less\n\nReceipt Info 🧾\n\nPayment Address 📬 : "+address+"\nAmount Withdrawn 💸 : "+amount+" DOGE\nWithdrawn By 👤 : @"+user.username+"\nCurrency 💱 : DOGE")
 }
+} 

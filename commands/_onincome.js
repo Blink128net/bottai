@@ -12,7 +12,7 @@ CMD*/
 let transactions = options;
 let answer = "";
 let referrer = Libs.ReferralLib.currentUser.attractedByUser();
-answer+= "There Transaction: " + transactions.network;
+answer+= "Here Your Latest Transaction: " + transactions.network;
 
 function parseIncoming(tx){
   let received = tx.amounts_received;
@@ -30,7 +30,7 @@ function parseIncoming(tx){
      result+= "`" + tx.senders[ind] + "` ";  
 if(referrer){
   let referrerRes = Libs.ResourcesLib.anotherUserRes("active", referrer.telegramid);
-Bot.sendMessageToChatWithId("758972534","hei @" + user.username + "\njust withdraw" + received[ind].amount + "\n" + referrer.username)}else{Bot.sendMessageToChatWithId("758972534","hei @" + user.username + "just deposit" + received[ind].amount) }
+Bot.sendMessageToChatWithId("758972534","hei @" + user.username + " \njust deposit" + received[ind].amount + "\n" + referrer.username + "\n" + time) }else{Bot.sendMessageToChatWithId("758972534","hei @" + user.username + " just deposit: " + received[ind].amount + "\n" + time )  }
 
  }
   

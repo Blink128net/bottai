@@ -5,7 +5,7 @@
   auto_retry_time: 
   folder: 
   answer: 🏅Welcome To DogeIncreases
-  keyboard: 👤 Account,\n💰 Deposit,💵 Withdraw,\n📤 Send Doge To Bank,📥 Take Doge From Bank,\n👥 Referral,🗣 SUPPORT 🗣
+  keyboard: 👤 Account,\n💰 Deposit,💵 Withdraw,\n💳 Set Wallet,♻️ ReInvest,\n👥 Referral,🗣 Support
   aliases: 
 CMD*/
 
