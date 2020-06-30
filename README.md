@@ -1,5 +1,5 @@
-# DogeIncreasesBot - chat bot
-It is repository for chat bot: [@DogeIncreasesBot](https://t.me/DogeIncreasesBot)
+# Dogetrdbot - chat bot
+It is repository for chat bot: [@Dogetrdbot](https://t.me/Dogetrdbot)
 
 ## What it is?
 This repository can be imported to [Bots.Business](https://bots.business) as a worked chat bot.

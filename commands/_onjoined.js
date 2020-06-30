@@ -5,10 +5,7 @@
   auto_retry_time: 
   folder: 
   answer: 
-
-  <<KEYBOARD
-
-  KEYBOARD
+  keyboard: 
   aliases: 
 CMD*/
 
