@@ -5,7 +5,7 @@
   auto_retry_time: 
   folder: 
   answer: 💡 To use this bot you must join this channel: @DogeIncreaseschannel
-  keyboard: ✅joined
+  keyboard: ✅Joined
   aliases: 
 CMD*/
 
