@@ -32,4 +32,3 @@ Bot.run({
   command: "/adminReply",
   options: { tgid: tgid }  // pass tgid in options to that command
 });
-
