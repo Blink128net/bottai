@@ -18,4 +18,3 @@ Libs.BlockIO.Dogecoin.getTransactions(
       labels: "user" + chat.chatid ,
      onSuccess: "/onincome", onError: "/onerror" }
 );
-
