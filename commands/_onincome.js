@@ -51,6 +51,3 @@ for(let ind in transactions.txs){
 }
 
 Bot.sendMessage(answer);
-
-
-
